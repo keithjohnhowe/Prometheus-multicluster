@@ -1,0 +1,21 @@
+prometheus:
+  prometheusSpec:
+    replicas: 1      
+    retention: 12h 
+    image:
+      tag: v2.24.1   # version of Prometheus
+    externalLabels:  # add default labels to all metrics 
+      geo: "Location ID"
+      region: "Region ID"
+      cluster: "Name of Cluster" 
+    thanos:         # add Thanos Sidecar
+      tag: v0.18.0   # a specific version of Thanos
+      objectStorageConfig: # S3 storage configuration to upload metrics 
+        key: thanos.yaml
+        name: thanos-objstore-config
+alertmanager:
+  enabled: true
+  alertmanagerSpec:
+    image:
+      tag: v0.21.0
+

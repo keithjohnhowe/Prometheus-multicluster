@@ -1,0 +1,7 @@
+type: S3
+config:
+  bucket: "Bucket Name"
+  endpoint: "EndPoint ID"
+  region: "Region ID"
+  access_key: "Access Key" 
+  secret_key: "Secret Key"
